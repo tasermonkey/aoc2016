@@ -1,3 +1,5 @@
+import lib.Position
+
 enum class Direction {
     North {
         override fun x() = 0
@@ -25,7 +27,6 @@ enum class Direction {
     abstract fun spin(dir: String): Direction
 }
 
-data class Position(val x: Int, val y: Int)
 data class Person(val pos: Position, val facing: Direction)
 data class Cmd(val spin: String, val magnitude: Int)
 fun dist(person: Person) = Math.abs(person.pos.x) + Math.abs(person.pos.y)
