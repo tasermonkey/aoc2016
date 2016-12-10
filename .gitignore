@@ -17,6 +17,8 @@
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+*.iml
+*.ipr
 
 # Gradle:
 .idea/gradle.xml
@@ -52,3 +54,21 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+# Created by https://www.gitignore.io/api/gradle
+
+### Gradle ###
+.gradle
+/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+.vagrant
+Vagrantfile

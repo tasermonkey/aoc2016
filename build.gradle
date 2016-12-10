@@ -1,0 +1,49 @@
+buildscript {
+  ext.kotlin_version = '1.0.4'
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  testCompile 'junit:junit:4.11'
+  testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+}
+
+task day1(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day1Kt"
+}
+
+task day2(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day2Kt"
+}
+
+task day3(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day3Kt"
+}
+
+task day4(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day4Kt"
+}
+
+task runAll {
+
+}
+runAll.dependsOn day1, day2, day3, day4
+defaultTasks 'runAll'
