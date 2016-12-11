@@ -47,8 +47,20 @@ task day4(type: JavaExec) {
   main = "Day4Kt"
 }
 
+task day5(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day5Kt"
+}
+
+
+task day6(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "Day6Kt"
+}
+
+
 task runAll {
 
 }
-runAll.dependsOn day1, day2, day3, day4
+runAll.dependsOn day1, day2, day3, day4, day5, day6
 defaultTasks 'runAll'
