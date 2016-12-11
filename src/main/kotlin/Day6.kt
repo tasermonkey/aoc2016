@@ -1,4 +1,5 @@
 import lib.Position
+import lib.inputByLine
 
 fun String.alphaFreq(): Array<Int> = this.fold(Array<Int>(26, {i -> 0}), {freq, c -> freq[c - 'a']++; freq})
 
@@ -19,8 +20,7 @@ fun largestLine(lines: List<String>): Int {
 
 
 fun main(args: Array<String>) {
-    val lines = Position::class.java.getResourceAsStream("/day6/p1Input.txt").bufferedReader()
-            .use { it.readLines() }
+    val lines = inputByLine(6, 1)
     val byCols = lines.fold(Array<StringBuffer>(largestLine(lines), {i -> StringBuffer(lines.size) })) {
         cols, line -> line.forEachIndexed { i, c -> cols[i].append(c) }; cols
     }.map(StringBuffer::toString)

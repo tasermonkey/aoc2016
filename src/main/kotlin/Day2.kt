@@ -1,4 +1,5 @@
 import lib.Position
+import lib.inputByLine
 
 class Keypad(val keyPad: Array<Array<String>>) {
     val maxY = keyPad.size - 1
@@ -44,7 +45,7 @@ fun part1() {
             arrayOf("x", "7", "8", "9", "x"),
             arrayOf("x", "x", "x", "x", "x")
     )
-    val lines = Position::class.java.getResourceAsStream("/day2/p1Input.txt").bufferedReader().use { it.readLines() }
+    val lines = inputByLine(2, 1)
     val keypad = Keypad(keypadValues)
     println(calcCode(keypad, Position(2, 2), lines))
 }
@@ -57,7 +58,7 @@ fun part2() {
             arrayOf("x", "A", "B", "C", "x"),
             arrayOf("x", "x", "D", "x", "x")
     )
-    val lines = Position::class.java.getResourceAsStream("/day2/p2Input.txt").bufferedReader().use { it.readLines() }
+    val lines = inputByLine(2, 2)
     val keypad = Keypad(keypadValues)
     println(calcCode(keypad, Position(0, 2), lines))
 }

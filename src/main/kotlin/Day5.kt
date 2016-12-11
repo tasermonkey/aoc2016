@@ -23,7 +23,7 @@ class DoorPassword(val id: String) {
                 .joinToString("")
     }
 
-    private val interestingHashSequence:  Sequence<String> by lazy {
+    private val interestingHashSequence: Sequence<String> by lazy {
         generateSequence(0, Int::inc)
                 .map { md5Hex("$id$it".toByteArray()) }
                 .filter { it.startsWith("00000") }

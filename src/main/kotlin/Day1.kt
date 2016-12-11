@@ -1,4 +1,5 @@
 import lib.Position
+import lib.fullInput
 
 enum class Direction {
     North {
@@ -32,7 +33,7 @@ data class Cmd(val spin: String, val magnitude: Int)
 fun dist(person: Person) = Math.abs(person.pos.x) + Math.abs(person.pos.y)
 
 fun main(args: Array<String>) {
-    val strInput = if (args.count() > 0) args[0] else Person::class.java.getResourceAsStream("/day1/default.txt").bufferedReader().use { it.readText() }
+    val strInput = fullInput(1, 1)
     val input = strInput.split(",").map(String::trim)
             .map({ it ->
                 Cmd(it.substring(0, 1), it.substring(1).toInt())

@@ -1,8 +1,9 @@
 import lib.Position
 import lib.batch
+import lib.inputByLine
 
 fun main(args: Array<String>) {
-    val lines = Position::class.java.getResourceAsStream("/day3/p1Input.txt").bufferedReader().use { it.readLines() }
+    val lines = inputByLine(3, 1)
     val triangles: List<List<Int>> = lines.map { it ->
         it.split(Regex("\\s+"))
     }.map { it -> it.filter(String::isNotEmpty) }.map { it.map(String::toInt) }
