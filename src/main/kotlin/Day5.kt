@@ -2,7 +2,7 @@ import org.apache.commons.codec.digest.DigestUtils.md5Hex
 import java.time.Duration
 import kotlin.system.measureTimeMillis
 
-class DoorPassword(val id: String) {
+internal class DoorPassword(val id: String) {
     val password: String by lazy {
 
         interestingHashSequence

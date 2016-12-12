@@ -1,4 +1,3 @@
-import lib.Position
 import lib.batch
 import lib.inputByLine
 
@@ -20,4 +19,4 @@ fun main(args: Array<String>) {
     println("$possible, $rotatedPossible")
 }
 
-fun possibleTriangle(t: List<Int>) = t[0] + t[1] > t[2] && t[1] + t[2] > t[0] && t[2] + t[0] > t[1]
+internal fun possibleTriangle(t: List<Int>) = t[0] + t[1] > t[2] && t[1] + t[2] > t[0] && t[2] + t[0] > t[1]

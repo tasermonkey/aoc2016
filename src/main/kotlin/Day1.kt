@@ -1,7 +1,7 @@
 import lib.Position
 import lib.fullInput
 
-enum class Direction {
+internal enum class Direction {
     North {
         override fun x() = 0
         override fun y() = 1
@@ -28,9 +28,9 @@ enum class Direction {
     abstract fun spin(dir: String): Direction
 }
 
-data class Person(val pos: Position, val facing: Direction)
-data class Cmd(val spin: String, val magnitude: Int)
-fun dist(person: Person) = Math.abs(person.pos.x) + Math.abs(person.pos.y)
+internal data class Person(val pos: Position, val facing: Direction)
+internal data class Cmd(val spin: String, val magnitude: Int)
+internal fun dist(person: Person) = Math.abs(person.pos.x) + Math.abs(person.pos.y)
 
 fun main(args: Array<String>) {
     val strInput = fullInput(1, 1)
@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
     part2(input)
 }
 
-fun part1(input: List<Cmd>) {
+internal fun part1(input: List<Cmd>) {
     val result = input.fold(Person(Position(0, 0), Direction.North)) { p, i ->
         val dir = p.facing.spin(i.spin)
         val loc = Position(p.pos.x + dir.x() * i.magnitude, p.pos.y + dir.y() * i.magnitude)
@@ -51,7 +51,7 @@ fun part1(input: List<Cmd>) {
     println("End of path: $result, shortest distance: ${dist(result)}")
 }
 
-fun part2(input: List<Cmd>) {
+internal fun part2(input: List<Cmd>) {
     val visited = mutableSetOf(Position(0, 0))
     var p = Person(Position(0, 0), Direction.North)
     input.any({i ->
